@@ -1,0 +1,24 @@
+{
+  "name": "block-explorer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "eslint --ignore-path .gitignore . app/**/*",
+    "test": "jest",
+    "start": "nodemon -r dotenv/config index.js"
+  },
+  "keywords": [],
+  "author": "Gwendolyn Faraday <gwenfaraday@gmail.com> (http://gwenfaraday.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "2.17.1",
+    "dotenv": "6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "5.5.0",
+    "eslint-config-strongloop": "2.1.0",
+    "jest": "23.5.0",
+    "nodemon": "1.18.4"
+  }
+}
