@@ -4,7 +4,7 @@
   "description": "Block explorer for Ethereum using Infura. Built in Node.js.",
   "main": "index.js",
   "scripts": {
-    "pretest": "eslint --ignore-path .gitignore . app/**/*",
+    "pretest": "eslint --ignore-path .gitignore . app/**/* bin/**/*",
     "test": "jest",
     "dev": "nodemon ./bin/global.js"
   },
