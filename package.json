@@ -1,6 +1,6 @@
 {
   "name": "blockx",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Block explorer for Ethereum using Infura. Built in Node.js.",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,12 @@
     "type": "git",
     "url": "https://github.com/gwenf/block-explorer.git"
   },
-  "keywords": ["ethereum", "blockchain", "block", "explorer"],
+  "keywords": [
+    "ethereum",
+    "blockchain",
+    "block",
+    "explorer"
+  ],
   "author": "Gwendolyn Faraday <gwenfaraday@gmail.com> (http://gwenfaraday.com/)",
   "license": "MIT",
   "dependencies": {
