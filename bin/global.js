@@ -8,7 +8,7 @@ require('dotenv').config();
 var bexLibrary = require('../lib/index.js');
 
 program
-    .version('1.0.0')
+    .version('1.1.0')
     .option('-i, --init [apiKey]', 'Create .env file')
     .option('-s, --start [startBlock]', 'Denote integer value of start block')
     .option('-e, --end [endBlock]', 'Denote integer value of end block')
