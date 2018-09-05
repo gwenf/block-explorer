@@ -12,7 +12,7 @@ program
     .option('-i, --init [apiKey]', 'Create .env file')
     .option('-s, --start [startBlock]', 'Denote integer value of start block')
     .option('-e, --end [endBlock]', 'Denote integer value of end block')
-    .option('-c, --contract', 'Include contract address list')
+    .option('-c, --contract', 'Boolean for including contract address list in results')
     .option('-l, --latest', 'Get number of latest block')
     .parse(process.argv);
 
