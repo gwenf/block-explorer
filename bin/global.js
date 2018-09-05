@@ -8,7 +8,7 @@ require('dotenv').config();
 var bexLibrary = require('../lib/index.js');
 
 program
-    .version('1.1.0')
+    .version('1.1.1')
     .option('-i, --init [apiKey]', 'Create .env file')
     .option('-s, --start [startBlock]', 'Denote integer value of start block')
     .option('-e, --end [endBlock]', 'Denote integer value of end block')
@@ -40,8 +40,8 @@ program
             console.log('Ending block value must be greater than start.');
             return false;
         }
-        // TODO: limit the amount of blocks to be processed
-        // TODO: figure out how to be more memory efficient
+        // TODO: limit the amount of blocks to be processed?
+        // TODO: figure out how to be more memory efficient when more blocks are processed
 
         console.log('Processing... This may take a minute.');
         const blockData = await bexLibrary.getData(program.start, end, program.contract);
