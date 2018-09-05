@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/gwenf/block-explorer.git"
   },
-  "keywords": [],
+  "keywords": ["ethereum", "blockchain", "block", "explorer"],
   "author": "Gwendolyn Faraday <gwenfaraday@gmail.com> (http://gwenfaraday.com/)",
   "license": "MIT",
   "dependencies": {

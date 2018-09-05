@@ -44,7 +44,8 @@ program
         // TODO: figure out how to be more memory efficient
 
         console.log('Processing... This may take a minute.');
-        bexLibrary.getData(program.start, end, program.contract);
+        const blockData = await bexLibrary.getData(program.start, end, program.contract);
+        console.log('data:', blockData);
     } else if (program.latest) {
         const latest = await bexLibrary.fetchBlocks.getLatestBlock();
         const latestInt = parseInt(web3.utils.hexToNumberString(latest), 10);
