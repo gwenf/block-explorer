@@ -6,7 +6,7 @@ const chalk = require('chalk');
 const bexApp = require('./app');
 
 program
-    .version('1.2.0')
+    .version('1.2.1')
     .option('-i, --init [apiKey]', 'Create .env file')
     .option('-s, --start [startBlock]', 'Denote integer value of start block')
     .option('-e, --end [endBlock]', 'Denote integer value of end block')

@@ -9,7 +9,7 @@ This app was built to be used as a global module but you can also clone it and r
 ## Steps to run the app as a global module:
 
 1. You will need to set up an API key with Infura. Go to [infura.io](https://infura.io) and follow steps to set up your account.
-2. `npm i -g bex`
+2. `npm install -g blockx`
 3. Configure `.env` file with this command:
 
 ```js
