@@ -43,3 +43,9 @@ bex --start 6008149 --end 6008153
 // you can also only denote a start block and the end block will default to the latest on the Ethereum blockchain
 bex --start 6008149
 ```
+
+### API Help
+
+```js
+bex --help
+```

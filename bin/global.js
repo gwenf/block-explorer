@@ -2,6 +2,11 @@
 
 const program = require('commander');
 const chalk = require('chalk');
+const clear = require('clear');
+const figlet = require('figlet');
+const inquirer = require('inquirer');
+
+// TODO: add progress for api calls: https://www.npmjs.com/package/clui
 
 const bexApp = require('./app');
 
@@ -20,6 +25,11 @@ program
     if (program.init) {
         return ;
     }
+
+    clear();
+
+    console.log(chalk.yellow(figlet.textSync('BXE', { horizontalLayout: 'full' })));
+    console.log(chalk.white('Ethereum Blockchain Explorer'));
     
     if (program.start) {
         console.log(chalk.blue('The blockrange is:'), `${data.start}-${data.end}`);
