@@ -1,12 +1,15 @@
 const web3 = require('web3');
 const chalk = require('chalk');
+const Table = require('cli-table'); // TODO: create tables to display information
 require('dotenv').config();
 
 var bexLibrary = require('../lib/index.js');
 
-async function main(program) {
-    if (program.start) {
-        const start = parseInt(web3.utils.hexToNumberString(program.start), 10);
+// TODO: should check if it's not a valid api key and let user know to check it
+async function main(answer) {
+    console.log(answer);
+    if (answer.action === 'range') {
+        const start = parseInt(web3.utils.hexToNumberString(answer), 10);
         let end = program.end;
 
         if (!end) {
@@ -28,14 +31,15 @@ async function main(program) {
             end,
             start
         };
-    } else if (program.latest) {
+    } else if (answer.action === 'latest') {
         const latest = await bexLibrary.fetchBlocks.getLatestBlock();
         const latestInt = parseInt(web3.utils.hexToNumberString(latest), 10);
 
-        return {
-            latest,
-            latestInt
-        }
+        console.log(
+            chalk.blue('This is the latest Ethereum block mined:'),
+            `${chalk.underline(latest)} (hex)`,
+            `${chalk.underline(latestInt)} (int)`
+        );
     }
 }
 

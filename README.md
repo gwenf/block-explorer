@@ -27,7 +27,15 @@ bex i [YOUR_API_KEY]
 
 ## Interface
 
-Follow the prompts...
+**Run the application:**
+
+```js
+bex run
+// or
+bex r
+```
+
+Then follow the prompts to get the information you want.
 
 # Version 1.x Instructions
 
