@@ -1,4 +1,3 @@
-const fs = require('fs');
 const web3 = require('web3');
 const chalk = require('chalk');
 require('dotenv').config();
@@ -6,15 +5,7 @@ require('dotenv').config();
 var bexLibrary = require('../lib/index.js');
 
 async function main(program) {
-    if (program.init) {
-        fs.writeFile('.env', `API_KEY=${program.init}`, 'utf8', function (err) {
-            if (err) {
-                return console.log(err);
-            }
-
-            console.log(chalk.blue('Your .env file was created successfully!'));
-        }); 
-    } else if (program.start) {
+    if (program.start) {
         const start = parseInt(web3.utils.hexToNumberString(program.start), 10);
         let end = program.end;
 
