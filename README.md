@@ -6,6 +6,39 @@ This app was built to be used as a global module but you can also clone it and r
 
 *Please raise issues for suggested improvements or bugs.* :)
 
+# Version 2.x Instructions
+
+*Version 2 was upgraded to have a more interactive interface for the cli.*
+
+## Setup & Run the app as a global module:
+
+1. You will need to set up an API key with Infura. Go to [infura.io](https://infura.io) and follow steps to set up your account.
+2. `npm install -g blockx`
+
+**Initialize the app with Infura:**
+
+Configure `.env` file with this command:
+
+```js
+bex init [YOUR_API_KEY]
+// or
+bex i [YOUR_API_KEY]
+```
+
+## Interface
+
+**Run the application:**
+
+```js
+bex run
+// or
+bex r
+```
+
+Then follow the prompts to get the information you want.
+
+# Version 1.x Instructions
+
 ## Steps to run the app as a global module:
 
 1. You will need to set up an API key with Infura. Go to [infura.io](https://infura.io) and follow steps to set up your account.
