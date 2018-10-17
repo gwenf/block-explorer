@@ -9,14 +9,13 @@ var bexLibrary = require('../lib/index.js');
 async function main(answer) {
     const { action } = answer.action;
     if (action === 'range') {
-        const { start, end } = answer.range;
-        const start = parseInt(web3.utils.hexToNumberString(start), 10);
-        let end = program.end;
+        let { start, end } = answer.range;
+        // start = parseInt(web3.utils.hexToNumberString(start), 10);
 
         if (end === 'latest') {
             end = await bexLibrary.fetchBlocks.getLatestBlock();
         }
-        end = parseInt(web3.utils.hexToNumberString(end), 10);
+        // end = parseInt(web3.utils.hexToNumberString(end), 10);
         console.log(end, start);
 
         // if (end < start) {

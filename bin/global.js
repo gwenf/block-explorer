@@ -8,7 +8,9 @@ const inquirer = require('inquirer');
 require('dotenv').config();
 
 const bexApp = require('./app');
-var bexLibrary = require('../lib/index.js');
+const bexLibrary = require('../lib/index');
+
+const prompts = require('./prompts');
 
 // TODO: add progress for api calls: https://www.npmjs.com/package/clui
 
@@ -34,22 +36,7 @@ program
 
         (async function chooseAction() {
 
-            // TODO: make a separate file for inquirer prompts
-            const answers = await inquirer.prompt({
-                type : 'list',
-                name : 'action',
-                message : 'What would you like to do?',
-                choices: [
-                    {name: 'Get number of latest block.', value: 'latest'},
-                    {name: 'Get info from block range.', value: 'range'},
-                    {
-                        type: 'confirm',
-                        name: 'Exit',
-                        message: 'Would you like to perform another action (just hit enter for YES)?',
-                        default: false
-                    }
-                ]
-            })
+            const answers = await inquirer.prompt(prompts.topLevel);
 
             if (answers.action === 'Exit') {
                 console.log(chalk.white('Have a nice day!'));
@@ -60,20 +47,7 @@ program
                 await bexApp(answers);
             } else if (answers.action === 'range') {
                 // TODO: add validation here for valid block numbers + end must be greater than start or blank
-                const questions = [
-                    {
-                        type: 'input',
-                        name: 'start',
-                        message: 'Enter a start block:'
-                    },
-                    {
-                        type: 'input',
-                        name: 'end',
-                        default: 'latest',
-                        message: 'Enter a end block (leave blank for latest block mined):'
-                    }
-                ];
-                const range = await inquirer.prompt(questions);
+                const range = await inquirer.prompt(prompts.blockInfo);
                 console.log(range);
 
                 await bexApp({ action: answers.action, range });

@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "eslint --ignore-path .gitignore . lib/**/* bin/**/*",
     "test": "node __tests__/app.js",
-    "dev": "nodemon ./bin/global.js"
+    "dev": "node ./bin/global.js"
   },
   "repository": {
     "type": "git",
