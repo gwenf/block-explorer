@@ -1,7 +1,6 @@
 const web3 = require('web3');
 const chalk = require('chalk');
-const Table = require('cli-table'); // TODO: create tables to display information
-// ^^ also can use the blessed library for tables: https://github.com/chjj/blessed#table-from-box
+const table = require('table').table;
 
 var bexLibrary = require('../lib/index.js');
 
@@ -26,11 +25,19 @@ async function main(answer) {
         console.log(chalk.yellow('Processing... This may take a minute.'));
         const blockData = await bexLibrary.getData(start, end, contract);
 
-        // TODO: this should be in table format:
         console.log(chalk.blue('The blockrange is:'), `${start}-${end}`);
         console.log(chalk.blue('The total Ether is:'), blockData.totalEther);
-        console.log(chalk.magenta('Sending addresses:'), blockData.sendingAddresses);
-        console.log(chalk.magenta('Receiving addresses:'), blockData.receivingAddresses);
+
+        console.log(chalk.magenta('Sending addresses:'));
+        console.log(table(Object.keys(blockData.sendingAddresses).map((key) => {
+             return [key, blockData.sendingAddresses[key]];
+        })));
+
+        console.log(chalk.magenta('Receiving addresses:'));
+        console.log(table(Object.keys(blockData.receivingAddresses).map((key) => {
+            return [key, blockData.receivingAddresses[key]];
+        })));
+
     } else if (answer.action === 'latest') {
         const latest = await bexLibrary.fetchBlocks.getLatestBlock();
         const latestInt = parseInt(web3.utils.hexToNumberString(latest), 10);
