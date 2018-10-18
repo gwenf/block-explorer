@@ -8,7 +8,7 @@ var bexLibrary = require('../lib/index.js');
 async function main(answer) {
     if (answer.action === 'range') {
         let { start, end } = answer.range;
-        // this is temporary until the api allows for contracts again:
+        // this is temporary until the bex api allows for contracts again:
         let contract = null;
 
         if (end === 'latest') {
