@@ -82,3 +82,8 @@ bex --start 6008149
 ```js
 bex --help
 ```
+
+## Roadmap
+
+* [ ] upgrade/fix testing
+* [ ] performance upgrades
