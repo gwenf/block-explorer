@@ -15,7 +15,7 @@ const prompts = require('./prompts');
 // TODO: add progress for api calls: https://www.npmjs.com/package/clui
 
 program
-    .version('2.1.0')
+    .version('2.2.0')
     .description('Command line ethereum blockchain explorere built in Node.js with Infura.');
 
 program
@@ -69,13 +69,3 @@ function startLogs() {
     console.log(chalk.white('----------------------------'));
     console.log('');
 }
-
-// OLD API REFERENCE TO BE REMOVED WHEN THERE IS PARITY BETWEEN VERSIONS 1 AND 2:
-// program
-//     .version('1.2.1')
-//     .option('-i, --init [apiKey]', 'Create .env file')
-//     .option('-s, --start [startBlock]', 'Denote integer value of start block')
-//     .option('-e, --end [endBlock]', 'Denote integer value of end block')
-//     .option('-c, --contract', 'Boolean for including contract address list in results')
-//     .option('-l, --latest', 'Get number of latest block')
-//     .parse(process.argv);
