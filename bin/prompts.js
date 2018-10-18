@@ -6,6 +6,7 @@ module.exports = {
         choices: [
             {name: 'Get number of latest block.', value: 'latest'},
             {name: 'Get info from block range.', value: 'range'},
+            {name: 'Get contracts in block range.', value: 'contracts'},
             {
                 type: 'confirm',
                 name: 'Exit',

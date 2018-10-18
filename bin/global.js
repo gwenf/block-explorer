@@ -46,11 +46,13 @@ program
             if (answers.action === 'latest') {
                 await bexApp(answers);
             } else if (answers.action === 'range') {
-                // TODO: add validation here for valid block numbers + end must be greater than start or blank
                 const range = await inquirer.prompt(prompts.blockInfo);
-                console.log(range);
 
                 await bexApp({ action: answers.action, range });
+            } else if (answers.action === 'contracts') {
+                const contracts = await inquirer.prompt(prompts.blockInfo);
+
+                await bexApp({ action: answers.action, contracts });
             }
 
             console.log(chalk.white('----------------------------'));
