@@ -15,7 +15,7 @@ const prompts = require('./prompts');
 // TODO: add progress for api calls: https://www.npmjs.com/package/clui
 
 program
-    .version('2.0.0')
+    .version('2.1.0')
     .description('Command line ethereum blockchain explorere built in Node.js with Infura.');
 
 program
